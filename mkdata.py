@@ -139,4 +139,5 @@ for trad in (set(trad_to_pinyin_to_percent.keys()) | set(simp_to_pinyin_to_perce
       pinyin_to_percent[pinyin] = 0
     pinyin_to_percent[pinyin] = max(pinyin_to_percent[pinyin], percent)
   for pinyin,percent in pinyin_to_percent.items():
-    print(f'{trad}\t{pinyin}\t{percent}%', file=outfile_tradsimp)
+    pinyin_nospaces = pinyin.replace(' ', '')
+    print(f'{trad}\t{pinyin_nospaces}\t{percent}%', file=outfile_tradsimp)
